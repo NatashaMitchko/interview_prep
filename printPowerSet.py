@@ -39,6 +39,27 @@ def print_power_set(arr):
 
     print power_set
 
+def print_power_set_recursive(arr, width=1, power_set=[[]]):
+    """Recursive solution to print power set.
+
+        >>> print_power_set_recursive([1, 2, 3])
+        [[], [1], [2], [3], [1, 2], [1, 3] [2, 3], [1, 2, 3]]
+
+    """
+
+
+    if width == len(arr):
+        power_set.append(arr)
+        print power_set
+        return
+
+    for start in range(len(arr)-width):
+        power_set.append(arr[start:start+width] + [arr[start+width]])
+
+    # recursive call here
+    print_power_set_recursive(arr, width+1, power_set)
+
+
 
 
 
