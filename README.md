@@ -12,5 +12,6 @@ Each file is structured similarly with
 Feel free to explore my solutions and suggest your own solutions. If you like the template that I've created for myself take a copy of it from [template.py](/template.py).
 
 Running list of problems:
-[Print the Power Set of a Given Set](/printPowerSet.py)
-[Find the Missing Number in the Sequence](/missing_number.py)
+* [Print the Power Set of a Given Set](/printPowerSet.py)
+* [Find the Missing Number in the Sequence](/missing_number.py)
+* [How long is the longest sentence?](/longest_sentence.py)
