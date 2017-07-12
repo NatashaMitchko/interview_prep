@@ -67,6 +67,49 @@ Solution inspired by looking at the solution(s) of others
 ################################################################################
 """
 
+def powerset1(s):
+    """Iteratively with a list comprehension
+
+        >>> powerset1([1, 2, 3])
+        [[], [1], [2], [3], [1, 2], [1, 3] [2, 3], [1, 2, 3]]
+    """
+    result = [[]]
+    for ss in s:
+        new_subset = [subset + [ss] for subset in result]
+        result.extend(new_subset)
+    return result
+
+def powerset2(s, new=[]):
+    """Recursively
+                
+        >>> powerset2([1, 2, 3])
+        [[], [1], [2], [3], [1, 2], [1, 3] [2, 3], [1, 2, 3]]"""
+
+    if s == []:
+        return new
+    else:
+        result = []
+        for ss in powerset2(s[1:], new+[s[0]]):
+            result.append(ss)
+        for ss in powerset2(s[1:], new):
+            result.append(ss)
+        return result
+
+def powerset3(orig, newset=[]):
+    """By making a generator object 
+    
+        >>> list(powerset3([1, 2, 3]))
+        [[], [1], [2], [3], [1, 2], [1, 3] [2, 3], [1, 2, 3]]"""
+    if orig == []:
+        yield newset
+    else:
+        for s in powerset3(orig[1:], newset+[orig[0]]):
+            yield s
+        for s in powerset3(orig[1:], newset):
+            yield s
+
+
+
 if __name__ == "__main__":
     import doctest
     print

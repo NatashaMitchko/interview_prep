@@ -41,6 +41,33 @@ Notes:
 ################################################################################
 """
 
+"""
+################################################################################
+Solution inspired by looking at the solution(s) of others:
+
+    This problem can get more complicated by asking "what if there are two
+    missing numbers?" and also "what if there are k missing numbers?"
+################################################################################
+"""
+
+def two_missing(lst, max):
+    """Returns the two missing numbers from the sequence using a sum and sum of
+    squares method
+        
+        >>> two_missing([1,3,5], 5)
+        (2, 4)
+    """
+    sum_of_missing = (max*(max+1))/2 - sum(lst)
+    sum_of_squares = (max*(max+1)(2*max+1))/6 - sum(i^2 for i in lst)
+    
+    # (sum_of_missing - missing1)^2 + missing1^2 = sum_of_squares
+    # (x-k2)^2 + k2^2 = y
+
+    
+
+
+
+
 if __name__ == "__main__":
     import doctest
     print
