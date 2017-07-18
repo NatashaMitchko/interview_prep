@@ -15,3 +15,4 @@ Running list of problems:
 * [Print the Power Set of a Given Set](/printPowerSet.py)
 * [Find the Missing Number in the Sequence](/missing_number.py)
 * [How long is the longest sentence?](/longest_sentence.py)
+* [Are the parentheses in a given string balanced?](/balance_parens.py)
