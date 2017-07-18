@@ -18,7 +18,7 @@ class StackEmptyError(IndexError):
 class Stack(object):
 	"""Simple stack with push and pop methods"""
 
-	def init(self):
+	def __init__(self):
 		"""Initialize the stack with a node"""
 
 		self._lst = []
@@ -61,26 +61,35 @@ class Stack(object):
 		if not self._lst:
 			return "<Stack Empty>"
 		else:
-			return "<Stack, Length:{}, Tail:{}".format(self.length, self._lst[-1])
+			return "<Stack, Length:{}, Tail:{}>".format(self.length, self._lst[-1])
 
 
 def opposite_char(string):
     """takes on side of a paren and gives the other side
     sidedness matters"""
-    if string == '{':
-        return '}'
-    elif string == '[':
-        return ']'
-    elif string == '(':
-        return ')'
-    elif string == '<':
-    	return '>'
+    opposties = {
+    	'(':')',
+    	')':'(',
+    	'{':'}',
+    	'}':'{',
+    	'[':']',
+    	']':'[',
+    	'<':'>',
+    	'>':'<'
+    }
+    return opposties[string]
 
 def is_balanced(s):
 	"""Takes a string and checks to see if the parentheses are balanced. Checks for
 	(), [], {}, <>
 
 	>>> is_balanced("abcd()")
+	True
+	>>> is_balanced(")))")
+	False
+	>>> is_balanced("(")
+	False
+	>>> is_balanced("abcd")
 	True
 	"""
 
@@ -91,11 +100,11 @@ def is_balanced(s):
 
 	for char in s:
 		if s in opening:
-			parnes.push(s)
-			print parnes
-		if s in closing and s == opposite_char(parnes.peek()):
+			parens.push(s)
+		elif s in closing and parens.is_empty():
+			print 'hi'
+		elif s in closing and s == opposite_char(parnes.peek()):
 			parens.pop()
-			print parens
 	if parens.is_empty():
 		return True
 	return False
