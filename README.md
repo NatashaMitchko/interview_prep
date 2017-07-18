@@ -16,3 +16,4 @@ Running list of problems:
 * [Find the Missing Number in the Sequence](/missing_number.py)
 * [How long is the longest sentence?](/longest_sentence.py)
 * [Are the parentheses in a given string balanced?](/balance_parens.py)
+* [Is this word an anagram of a palindrome?](/anagram_palindrome.py)
