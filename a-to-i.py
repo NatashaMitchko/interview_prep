@@ -64,9 +64,36 @@ def a_to_i2(str):
 
 """
 ################################################################################
-Solution inspired by looking at the solution(s) of others
+Solution after being prompted to optimize
 ################################################################################
 """
+
+def a_to_i3(str):
+	"""Given a string of digits return that value as an integer
+
+		>>> a_to_i3("1234")
+		1234
+	"""
+	# Create dictionary
+	s2i = {
+		'1': 1,
+		'2': 2,
+		'3': 3,
+		'4': 4,
+		'5': 5,
+		'6': 6,
+		'7': 7,
+		'8': 8,
+		'9': 9,
+		'0': 0
+	}
+
+	i = 0
+	sum = 0
+	while i < len(str):
+		sum = sum * 10 + s2i[str[i]]
+		i += 1
+	return sum
 
 if __name__ == "__main__":
     import doctest

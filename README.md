@@ -19,3 +19,5 @@ Running list of problems:
 * [Is this word an anagram of a palindrome?](/anagram_palindrome.py)
 * [Route Between Nodes](/route_between_nodes.py)
 * [A to i](/a-to-i.py)
+* [nth to last](/nth_to_last.py)
+* [Remove Duplicates in a Linked List](/.remove_dups.py)
